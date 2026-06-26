@@ -413,7 +413,7 @@ const Index = () => {
                 <div>
                   <h3 className="text-sm font-bold uppercase tracking-wider mb-6">ТУР</h3>
                   <ul className="space-y-3">
-                    {["Фотогалерея", "Цены"].map((item) => (
+                    {["Галерея", "Цены"].map((item) => (
                       <li key={item}>
                         <a href="#" className="text-white/70 hover:text-white transition-colors text-sm leading-relaxed">
                           {item}
