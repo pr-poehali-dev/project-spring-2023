@@ -100,30 +100,23 @@ const ProgramSection = () => {
             </div>
 
             {/* Timeline */}
-            <div className="relative mb-4" style={{ height: '120px' }}>
-              {/* Волнистая линия SVG */}
+            <div className="relative mb-4" style={{ height: '140px' }}>
               <svg
                 className="absolute inset-0 w-full h-full"
-                viewBox="0 0 1000 120"
+                viewBox="0 0 1000 140"
                 preserveAspectRatio="none"
                 xmlns="http://www.w3.org/2000/svg"
               >
-                <defs>
-                  <filter id="roughen" x="-5%" y="-80%" width="115%" height="260%">
-                    <feTurbulence type="turbulence" baseFrequency="0.025" numOctaves="2" seed="5" result="noise" />
-                    <feDisplacementMap in="SourceGraphic" in2="noise" scale="2.5" xChannelSelector="R" yChannelSelector="G" />
-                  </filter>
-                </defs>
                 <path
-                  d="M10,60 C35,38 60,82 85,60 C110,38 135,82 160,60 C185,38 210,82 235,60 C260,38 285,82 310,60 C335,38 360,82 385,60 C410,38 435,82 460,60 C485,38 510,82 535,60 C560,38 585,82 610,60 C635,38 660,82 685,60 C710,38 735,82 760,60 C785,38 810,82 835,60 C860,38 885,82 910,60 C935,38 955,68 965,60"
+                  d="M10,70 C35,45 65,45 90,70 C115,95 145,95 170,70 C195,45 225,45 250,70 C275,95 305,95 330,70 C355,45 385,45 410,70 C435,95 465,95 490,70 C515,45 545,45 570,70 C595,95 625,95 650,70 C675,45 705,45 730,70 C755,95 785,95 810,70 C835,45 865,45 890,70 C915,95 945,95 960,75"
                   fill="none"
                   stroke="white"
-                  strokeWidth="2.5"
+                  strokeWidth="2"
                   strokeLinecap="round"
                   strokeLinejoin="round"
-                  filter="url(#roughen)"
+                  strokeDasharray="8 6"
                 />
-                <text x="970" y="68" fill="white" fontSize="28" fontFamily="Georgia, 'Times New Roman', serif" fontStyle="italic">⟶</text>
+                <text x="964" y="82" fill="white" fontSize="22" fontFamily="Georgia, 'Times New Roman', serif" fontStyle="italic" fontWeight="bold">→</text>
               </svg>
 
               {/* Кружочки в шахматном порядке */}
@@ -134,16 +127,16 @@ const ProgramSection = () => {
                     <div
                       key={i}
                       className="relative flex flex-col items-center"
-                      style={{ transform: isTop ? 'translateY(-26px)' : 'translateY(26px)' }}
+                      style={{ transform: isTop ? 'translateY(-28px)' : 'translateY(28px)' }}
                     >
                       {isTop && (
-                        <span className="text-white/80 text-xs mb-2 whitespace-nowrap" style={{ fontFamily: 'Georgia, serif', fontStyle: 'italic' }}>
+                        <span className="text-white/70 text-xs mb-2 whitespace-nowrap" style={{ fontFamily: 'Georgia, serif', fontStyle: 'italic' }}>
                           {i + 1} день
                         </span>
                       )}
-                      <div className="w-4 h-4 rounded-full border-2 border-white bg-transparent flex-shrink-0" />
+                      <div className="w-3 h-3 rounded-full border-2 border-white bg-transparent flex-shrink-0" />
                       {!isTop && (
-                        <span className="text-white/80 text-xs mt-2 whitespace-nowrap" style={{ fontFamily: 'Georgia, serif', fontStyle: 'italic' }}>
+                        <span className="text-white/70 text-xs mt-2 whitespace-nowrap" style={{ fontFamily: 'Georgia, serif', fontStyle: 'italic' }}>
                           {i + 1} день
                         </span>
                       )}
