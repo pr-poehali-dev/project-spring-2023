@@ -396,51 +396,22 @@ const Index = () => {
         <div className="max-w-7xl mx-auto">
           <div className="rounded-3xl bg-white/[0.03] backdrop-blur-2xl ring-1 ring-white/10 p-12">
             {/* Main Footer Content */}
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12 mb-12">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-12 mb-12">
               {/* Brand Section */}
-              <div className="lg:col-span-2">
+              <div>
                 <div className="flex items-center gap-2 mb-6">
                   <Waves className="w-6 h-6" />
                   <span className="text-xl font-semibold">Maldives Voyage</span>
                 </div>
                 <p className="text-white/80 leading-relaxed text-pretty">
-                  Авторские туры на Мальдивы с дайвингом, экскурсиями и погружением в местную культуру. Мы создаём незабываемые путешествия для небольших групп.
+                  Мы создаем незабываемые путешествия и показываем, в каком прекрасном мире мы живем!
                 </p>
               </div>
 
-              {/* Expedition Links */}
-              <div>
-                <h3 className="text-sm font-bold uppercase tracking-wider mb-6">ТУР</h3>
+              {/* Links */}
+              <div className="flex gap-16">
                 <ul className="space-y-3">
-                  {["Программа", "Цены", "Дайвинг", "Фотогалерея"].map((item) => (
-                    <li key={item}>
-                      <a href="#" className="text-white/70 hover:text-white transition-colors text-sm leading-relaxed">
-                        {item}
-                      </a>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-
-              {/* About Links */}
-              <div>
-                <h3 className="text-sm font-bold uppercase tracking-wider mb-6">О НАС</h3>
-                <ul className="space-y-3">
-                  {["Наша миссия", "Безопасность", "Команда", "Отзывы"].map((item) => (
-                    <li key={item}>
-                      <a href="#" className="text-white/70 hover:text-white transition-colors text-sm leading-relaxed">
-                        {item}
-                      </a>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-
-              {/* Resources Links */}
-              <div>
-                <h3 className="text-sm font-bold uppercase tracking-wider mb-6">ПОДДЕРЖКА</h3>
-                <ul className="space-y-3">
-                  {["Справочный центр", "Контакты", "Вопросы и ответы", "Условия"].map((item) => (
+                  {["Фотогалерея", "Наша команда", "Отзывы", "Цены"].map((item) => (
                     <li key={item}>
                       <a href="#" className="text-white/70 hover:text-white transition-colors text-sm leading-relaxed">
                         {item}
