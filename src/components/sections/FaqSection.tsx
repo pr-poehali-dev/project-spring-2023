@@ -30,8 +30,17 @@ const faqs: FAQ[] = [
   },
 ]
 
+const photos = [
+  "https://cdn.poehali.dev/projects/735094ac-5d55-4396-a0f0-fe0e0cd97aa4/bucket/d8006019-12f2-455d-88ef-0aba5d37fb7c.JPG",
+  "https://cdn.poehali.dev/projects/735094ac-5d55-4396-a0f0-fe0e0cd97aa4/bucket/2fab5d35-6142-44d5-9407-0fbbd82b499a.JPG",
+  "https://cdn.poehali.dev/projects/735094ac-5d55-4396-a0f0-fe0e0cd97aa4/bucket/1b192955-2139-466b-afe8-d08736d48973.JPG",
+  "https://cdn.poehali.dev/projects/735094ac-5d55-4396-a0f0-fe0e0cd97aa4/bucket/956a3509-103e-4b2c-bbe5-9aee71125d07.JPG",
+  "https://cdn.poehali.dev/projects/735094ac-5d55-4396-a0f0-fe0e0cd97aa4/bucket/73a09c20-a6aa-46fb-bdd0-0617cfedb3dd.jpg",
+]
+
 const FaqSection = () => {
   const [openFaq, setOpenFaq] = useState<number | null>(null)
+  const [lightbox, setLightbox] = useState<string | null>(null)
 
   const toggleFaq = (index: number) => {
     setOpenFaq(openFaq === index ? null : index)
@@ -102,29 +111,44 @@ const FaqSection = () => {
           }
         `}</style>
         <div className="photo-strip">
-          {[
-            "https://cdn.poehali.dev/projects/735094ac-5d55-4396-a0f0-fe0e0cd97aa4/bucket/d8006019-12f2-455d-88ef-0aba5d37fb7c.JPG",
-            "https://cdn.poehali.dev/projects/735094ac-5d55-4396-a0f0-fe0e0cd97aa4/bucket/2fab5d35-6142-44d5-9407-0fbbd82b499a.JPG",
-            "https://cdn.poehali.dev/projects/735094ac-5d55-4396-a0f0-fe0e0cd97aa4/bucket/1b192955-2139-466b-afe8-d08736d48973.JPG",
-            "https://cdn.poehali.dev/projects/735094ac-5d55-4396-a0f0-fe0e0cd97aa4/bucket/956a3509-103e-4b2c-bbe5-9aee71125d07.JPG",
-            "https://cdn.poehali.dev/projects/735094ac-5d55-4396-a0f0-fe0e0cd97aa4/bucket/73a09c20-a6aa-46fb-bdd0-0617cfedb3dd.jpg",
-            "https://cdn.poehali.dev/projects/735094ac-5d55-4396-a0f0-fe0e0cd97aa4/bucket/d8006019-12f2-455d-88ef-0aba5d37fb7c.JPG",
-            "https://cdn.poehali.dev/projects/735094ac-5d55-4396-a0f0-fe0e0cd97aa4/bucket/2fab5d35-6142-44d5-9407-0fbbd82b499a.JPG",
-            "https://cdn.poehali.dev/projects/735094ac-5d55-4396-a0f0-fe0e0cd97aa4/bucket/1b192955-2139-466b-afe8-d08736d48973.JPG",
-            "https://cdn.poehali.dev/projects/735094ac-5d55-4396-a0f0-fe0e0cd97aa4/bucket/956a3509-103e-4b2c-bbe5-9aee71125d07.JPG",
-            "https://cdn.poehali.dev/projects/735094ac-5d55-4396-a0f0-fe0e0cd97aa4/bucket/73a09c20-a6aa-46fb-bdd0-0617cfedb3dd.jpg",
-          ].map((src, i) => (
-            <div key={i} className="flex-shrink-0 mx-3 rounded-2xl overflow-hidden" style={{ width: '320px', height: '240px' }}>
+          {[...photos, ...photos].map((src, i) => (
+            <div
+              key={i}
+              className="flex-shrink-0 mx-3 rounded-2xl overflow-hidden cursor-pointer"
+              style={{ width: '320px', height: '240px' }}
+              onClick={() => setLightbox(src)}
+            >
               <img
                 src={src}
                 alt={`Фото ${i + 1}`}
-                className="w-full h-full object-cover"
+                className="w-full h-full object-cover transition-transform duration-300 hover:scale-105"
                 draggable={false}
               />
             </div>
           ))}
         </div>
       </section>
+
+      {/* Lightbox */}
+      {lightbox && (
+        <div
+          className="fixed inset-0 z-50 flex items-center justify-center bg-black/90 backdrop-blur-sm"
+          onClick={() => setLightbox(null)}
+        >
+          <img
+            src={lightbox}
+            alt="Фото"
+            className="max-w-[90vw] max-h-[90vh] rounded-2xl object-contain shadow-2xl"
+            onClick={(e) => e.stopPropagation()}
+          />
+          <button
+            className="absolute top-6 right-8 text-white/70 hover:text-white text-4xl font-light leading-none"
+            onClick={() => setLightbox(null)}
+          >
+            ×
+          </button>
+        </div>
+      )}
 
       {/* Contact Section */}
       <section id="contact" className="relative z-10 py-24 px-6">
