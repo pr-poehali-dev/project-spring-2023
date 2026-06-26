@@ -61,13 +61,20 @@ const Index = () => {
 
           {/* Navigation Links */}
           <div className="hidden md:flex items-center gap-1">
-            {["Тур", "Программа", "Дайвинг", "Вопросы", "Контакты"].map((item) => (
+            {[
+              { label: "Тур", href: "#" },
+              { label: "Программа", href: "#program" },
+              { label: "Дайвинг", href: "#video" },
+              { label: "Вопросы", href: "#faq" },
+              { label: "Контакты", href: "#contact" },
+            ].map((item) => (
               <a
-                key={item}
-                href="#"
+                key={item.label}
+                href={item.href}
+                onClick={(e) => { e.preventDefault(); document.querySelector(item.href === '#' ? 'body' : item.href)?.scrollIntoView({ behavior: 'smooth' }) }}
                 className="px-4 py-2 bg-black/40 ring-1 ring-white/20 backdrop-blur rounded-full hover:bg-black/50 transition-colors"
               >
-                {item}
+                {item.label}
               </a>
             ))}
           </div>
@@ -159,7 +166,7 @@ const Index = () => {
       </section>
 
       {/* Journey Section */}
-      <section className="relative z-10 py-24 px-6">
+      <section id="program" className="relative z-10 py-24 px-6">
         <div className="max-w-7xl mx-auto">
           <div className="rounded-3xl bg-white/5 ring-1 ring-white/10 backdrop-blur p-12">
             {/* Section Header */}
@@ -230,8 +237,31 @@ const Index = () => {
         </div>
       </section>
 
+      {/* Video Section */}
+      <section id="video" className="relative z-10 py-8 px-6">
+        <div className="max-w-7xl mx-auto">
+          <div className="rounded-3xl overflow-hidden ring-1 ring-white/10 relative">
+            <div className="aspect-video bg-black/40 flex items-center justify-center relative overflow-hidden">
+              <iframe
+                className="w-full h-full absolute inset-0"
+                src="https://www.youtube.com/embed/qIEN6HJPGCA?autoplay=1&mute=1&loop=1&playlist=qIEN6HJPGCA&controls=0&showinfo=0&modestbranding=1"
+                title="Дайвинг на Мальдивах"
+                allow="autoplay; encrypted-media"
+                allowFullScreen
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent pointer-events-none" />
+              <div className="absolute bottom-8 left-8 right-8 pointer-events-none">
+                <p className="text-2xl md:text-3xl font-light text-white drop-shadow-lg">
+                  Подводный мир Мальдив — коралловые рифы, черепахи и скаты
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* FAQ Section */}
-      <section className="relative z-10 py-24 px-6">
+      <section id="faq" className="relative z-10 py-24 px-6">
         <div className="max-w-7xl mx-auto">
           <div className="rounded-3xl bg-white/5 ring-1 ring-white/10 backdrop-blur p-12">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
