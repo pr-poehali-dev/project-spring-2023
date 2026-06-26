@@ -74,7 +74,7 @@ const Index = () => {
 
           {/* Action Buttons */}
           <div className="flex items-center gap-3">
-            <Button className="bg-white text-black hover:bg-white/90 rounded-full px-6">Забронировать</Button>
+            <Button className="bg-white text-black hover:bg-white/90 rounded-full px-6" onClick={() => document.getElementById('contact')?.scrollIntoView({behavior:'smooth'})}>Забронировать</Button>
           </div>
         </nav>
 
@@ -95,7 +95,7 @@ const Index = () => {
 
           {/* CTA Buttons */}
           <div className="flex flex-col sm:flex-row gap-4 mb-16">
-            <Button size="lg" className="bg-white text-black hover:bg-white/90 rounded-full px-8 py-4 text-lg">
+            <Button size="lg" className="bg-white text-black hover:bg-white/90 rounded-full px-8 py-4 text-lg" onClick={() => document.getElementById('contact')?.scrollIntoView({behavior:'smooth'})}>
               Забронировать тур
             </Button>
             <Button
@@ -277,7 +277,7 @@ const Index = () => {
       </section>
 
       {/* Contact Section */}
-      <section className="relative z-10 py-24 px-6">
+      <section id="contact" className="relative z-10 py-24 px-6">
         <div className="max-w-7xl mx-auto">
           <div className="rounded-3xl bg-black/20 ring-1 ring-white/15 backdrop-blur p-12">
             {/* Section Header */}
