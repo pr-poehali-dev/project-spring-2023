@@ -108,14 +108,14 @@ const ProgramSection = () => {
                 xmlns="http://www.w3.org/2000/svg"
               >
                 <defs>
-                  <marker id="arrowhead" markerWidth="6" markerHeight="6" refX="3" refY="3" orient="auto">
-                    <path d="M0,0 L0,6 L6,3 Z" fill="white" />
+                  <marker id="arrowhead" markerWidth="7" markerHeight="7" refX="5" refY="3.5" orient="auto">
+                    <path d="M0,0 L0,7 L7,3.5 Z" fill="white" />
                   </marker>
                 </defs>
 
-                {/* Волнистая пунктирная линия со стрелкой */}
+                {/* Волнистая пунктирная линия со стрелкой — 10 волн от x=20 до x=980 */}
                 <path
-                  d="M10,80 C35,52 65,52 90,80 C115,108 145,108 170,80 C195,52 225,52 250,80 C275,108 305,108 330,80 C355,52 385,52 410,80 C435,108 465,108 490,80 C515,52 545,52 570,80 C595,108 625,108 650,80 C675,52 705,52 730,80 C755,108 785,108 810,80 C835,52 865,52 890,80 C915,108 945,108 975,80"
+                  d="M20,80 C42,50 68,50 90,80 C112,110 138,110 160,80 C182,50 208,50 230,80 C252,110 278,110 300,80 C322,50 348,50 370,80 C392,110 418,110 440,80 C462,50 488,50 510,80 C532,110 558,110 580,80 C602,50 628,50 650,80 C672,110 698,110 720,80 C742,50 768,50 790,80 C812,110 838,110 860,80 C882,50 908,50 930,80 C952,110 968,100 980,80"
                   fill="none"
                   stroke="white"
                   strokeWidth="3"
@@ -125,18 +125,18 @@ const ProgramSection = () => {
                   markerEnd="url(#arrowhead)"
                 />
 
-                {/* Кружочки прямо на линии */}
+                {/* 10 кружочков равномерно: x = 20, 118, 216 ... шаг 96, каждый на волне */}
                 {[
-                  { x: 10,  y: 80  },
-                  { x: 90,  y: 80  },
-                  { x: 170, y: 80  },
-                  { x: 250, y: 80  },
-                  { x: 330, y: 80  },
-                  { x: 410, y: 80  },
-                  { x: 490, y: 80  },
-                  { x: 570, y: 80  },
-                  { x: 650, y: 80  },
-                  { x: 730, y: 80  },
+                  { x: 20,  y: 80  },
+                  { x: 116, y: 80  },
+                  { x: 212, y: 80  },
+                  { x: 308, y: 80  },
+                  { x: 404, y: 80  },
+                  { x: 500, y: 80  },
+                  { x: 596, y: 80  },
+                  { x: 692, y: 80  },
+                  { x: 788, y: 80  },
+                  { x: 884, y: 80  },
                 ].map((pt, i) => {
                   const isTop = i % 2 === 0
                   return (
@@ -144,10 +144,10 @@ const ProgramSection = () => {
                       <circle cx={pt.x} cy={pt.y} r="7" fill="#0B0F12" stroke="white" strokeWidth="2.5" />
                       <text
                         x={pt.x}
-                        y={isTop ? pt.y - 18 : pt.y + 28}
+                        y={isTop ? pt.y - 16 : pt.y + 26}
                         textAnchor="middle"
-                        fill="rgba(255,255,255,0.7)"
-                        fontSize="13"
+                        fill="rgba(255,255,255,0.75)"
+                        fontSize="12"
                         fontFamily="Georgia, 'Times New Roman', serif"
                         fontStyle="italic"
                       >
