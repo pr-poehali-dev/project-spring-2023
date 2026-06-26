@@ -218,13 +218,13 @@ const FaqSection = () => {
                 <div className="rounded-2xl bg-white/95 text-black p-6 shadow-2xl">
                   <div className="flex items-center gap-4 mb-4">
                     <img
-                      src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=150&h=150&fit=crop&crop=face"
-                      alt="Гид тура"
+                      src="https://cdn.poehali.dev/projects/735094ac-5d55-4396-a0f0-fe0e0cd97aa4/bucket/4e2a9d03-0b90-47c7-9f28-af6c9bd9b959.jpg"
+                      alt="Наталия Дзагоева"
                       className="w-16 h-16 rounded-full object-cover"
                     />
                     <div>
-                      <h4 className="text-lg font-semibold">Алексей Морской</h4>
-                      <p className="text-gray-600">Автор и гид тура</p>
+                      <h4 className="text-lg font-semibold">Наталия Дзагоева</h4>
+                      <p className="text-gray-600">PADI Instructor</p>
                     </div>
                   </div>
                   <Button className="w-full bg-black text-white hover:bg-gray-800 rounded-lg flex items-center justify-center gap-2">
