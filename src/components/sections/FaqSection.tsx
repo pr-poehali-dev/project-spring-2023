@@ -85,6 +85,47 @@ const FaqSection = () => {
         </div>
       </section>
 
+      {/* Photo Scroll Strip */}
+      <section className="relative z-10 py-12 overflow-hidden">
+        <style>{`
+          @keyframes scroll-photos {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+          }
+          .photo-strip {
+            display: flex;
+            animation: scroll-photos 30s linear infinite;
+            width: max-content;
+          }
+          .photo-strip:hover {
+            animation-play-state: paused;
+          }
+        `}</style>
+        <div className="photo-strip">
+          {[
+            "https://cdn.poehali.dev/projects/735094ac-5d55-4396-a0f0-fe0e0cd97aa4/bucket/d8006019-12f2-455d-88ef-0aba5d37fb7c.JPG",
+            "https://cdn.poehali.dev/projects/735094ac-5d55-4396-a0f0-fe0e0cd97aa4/bucket/2fab5d35-6142-44d5-9407-0fbbd82b499a.JPG",
+            "https://cdn.poehali.dev/projects/735094ac-5d55-4396-a0f0-fe0e0cd97aa4/bucket/1b192955-2139-466b-afe8-d08736d48973.JPG",
+            "https://cdn.poehali.dev/projects/735094ac-5d55-4396-a0f0-fe0e0cd97aa4/bucket/956a3509-103e-4b2c-bbe5-9aee71125d07.JPG",
+            "https://cdn.poehali.dev/projects/735094ac-5d55-4396-a0f0-fe0e0cd97aa4/bucket/73a09c20-a6aa-46fb-bdd0-0617cfedb3dd.jpg",
+            "https://cdn.poehali.dev/projects/735094ac-5d55-4396-a0f0-fe0e0cd97aa4/bucket/d8006019-12f2-455d-88ef-0aba5d37fb7c.JPG",
+            "https://cdn.poehali.dev/projects/735094ac-5d55-4396-a0f0-fe0e0cd97aa4/bucket/2fab5d35-6142-44d5-9407-0fbbd82b499a.JPG",
+            "https://cdn.poehali.dev/projects/735094ac-5d55-4396-a0f0-fe0e0cd97aa4/bucket/1b192955-2139-466b-afe8-d08736d48973.JPG",
+            "https://cdn.poehali.dev/projects/735094ac-5d55-4396-a0f0-fe0e0cd97aa4/bucket/956a3509-103e-4b2c-bbe5-9aee71125d07.JPG",
+            "https://cdn.poehali.dev/projects/735094ac-5d55-4396-a0f0-fe0e0cd97aa4/bucket/73a09c20-a6aa-46fb-bdd0-0617cfedb3dd.jpg",
+          ].map((src, i) => (
+            <div key={i} className="flex-shrink-0 mx-3 rounded-2xl overflow-hidden" style={{ width: '320px', height: '240px' }}>
+              <img
+                src={src}
+                alt={`Фото ${i + 1}`}
+                className="w-full h-full object-cover"
+                draggable={false}
+              />
+            </div>
+          ))}
+        </div>
+      </section>
+
       {/* Contact Section */}
       <section id="contact" className="relative z-10 py-24 px-6">
         <div className="max-w-7xl mx-auto">
