@@ -8,7 +8,7 @@ const HeroSection = () => {
       <div
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"
         style={{
-          backgroundImage: "url(https://cdn.poehali.dev/projects/735094ac-5d55-4396-a0f0-fe0e0cd97aa4/files/3c3d662b-8cdf-42ab-9f1b-9d4dbd412d84.jpg)",
+          backgroundImage: "url(https://cdn.poehali.dev/projects/735094ac-5d55-4396-a0f0-fe0e0cd97aa4/bucket/7777f37c-f8bf-40a4-91e4-e509afcb1503.jpeg)",
         }}
       >
         <div className="absolute inset-0 bg-gradient-to-b from-black/40 to-black/80" />
