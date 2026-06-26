@@ -410,15 +410,30 @@ const Index = () => {
 
               {/* Links */}
               <div className="flex gap-16">
-                <ul className="space-y-3">
-                  {["Фотогалерея", "Наша команда", "Отзывы", "Цены"].map((item) => (
-                    <li key={item}>
-                      <a href="#" className="text-white/70 hover:text-white transition-colors text-sm leading-relaxed">
-                        {item}
-                      </a>
-                    </li>
-                  ))}
-                </ul>
+                <div>
+                  <h3 className="text-sm font-bold uppercase tracking-wider mb-6">ТУР</h3>
+                  <ul className="space-y-3">
+                    {["Фотогалерея", "Цены"].map((item) => (
+                      <li key={item}>
+                        <a href="#" className="text-white/70 hover:text-white transition-colors text-sm leading-relaxed">
+                          {item}
+                        </a>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+                <div>
+                  <h3 className="text-sm font-bold uppercase tracking-wider mb-6">О НАС</h3>
+                  <ul className="space-y-3">
+                    {["Команда", "Отзывы"].map((item) => (
+                      <li key={item}>
+                        <a href="#" className="text-white/70 hover:text-white transition-colors text-sm leading-relaxed">
+                          {item}
+                        </a>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
               </div>
             </div>
 
