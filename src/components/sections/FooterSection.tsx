@@ -1,5 +1,4 @@
 import { Waves } from "lucide-react"
-import { Button } from "@/components/ui/button"
 
 const FooterSection = () => {
   return (
@@ -58,21 +57,6 @@ const FooterSection = () => {
                     </a>
                   </li>
                 </ul>
-              </div>
-            </div>
-          </div>
-
-          {/* Newsletter Section */}
-          <div className="border-t border-white/10 pt-12 mb-12">
-            <div className="max-w-md">
-              <h3 className="text-lg font-semibold mb-4">Новости туров и спецпредложения</h3>
-              <div className="flex gap-3">
-                <input
-                  type="email"
-                  placeholder="Введите ваш email"
-                  className="flex-1 px-4 py-3 rounded-lg bg-white/5 ring-1 ring-white/20 backdrop-blur border-0 text-white placeholder:text-white/50 focus:ring-2 focus:ring-white/30 focus:outline-none"
-                />
-                <Button className="bg-white text-black hover:bg-white/90 rounded-lg px-6 h-[50px]">Подписаться</Button>
               </div>
             </div>
           </div>
