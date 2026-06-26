@@ -22,8 +22,8 @@ const HeroSection = () => {
           <span className="font-medium text-balance">Maldives Voyage</span>
         </div>
 
-        {/* Navigation Links */}
-        <div className="hidden md:flex items-center gap-1">
+        {/* Navigation Links — center */}
+        <div className="absolute left-1/2 -translate-x-1/2 hidden md:flex items-center gap-1">
           {[
             { label: "Тур", href: "#" },
             { label: "Программа", href: "#program" },
