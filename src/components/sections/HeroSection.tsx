@@ -42,10 +42,6 @@ const HeroSection = () => {
           ))}
         </div>
 
-        {/* Action Buttons */}
-        <div className="flex items-center gap-3">
-          <Button className="bg-white text-black hover:bg-white/90 rounded-full px-6" onClick={() => document.getElementById('contact')?.scrollIntoView({behavior:'smooth'})}>Забронировать</Button>
-        </div>
       </nav>
 
       {/* Hero Content */}
