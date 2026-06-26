@@ -5,7 +5,7 @@ import FooterSection from "@/components/sections/FooterSection"
 
 const Index = () => {
   return (
-    <div className="min-h-screen bg-background text-foreground">
+    <div className="min-h-screen bg-[#0B0F12] text-white">
       <HeroSection />
       <ProgramSection />
       <FaqSection />
