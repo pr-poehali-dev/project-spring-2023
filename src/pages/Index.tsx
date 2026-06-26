@@ -1,4 +1,4 @@
-import { Waves, Anchor, Sparkles, ShieldCheck, Wallet, Fish, Plus, Minus, Mail } from "lucide-react"
+import { Waves, Anchor, Sparkles, ShieldCheck, Wallet, Fish, Plus, Minus, Mail, PlaneTakeoff } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { useState } from "react"
 
@@ -214,6 +214,22 @@ const Index = () => {
                     Морская прогулка на закате с наблюдением за дельфинами, спокойный отдых на белоснежных пляжах и тёплое прощание с океаном.
                   </p>
                 </div>
+              </div>
+            </div>
+
+            {/* Timeline */}
+            <div className="relative flex items-center px-4 py-8 mb-4">
+              <div className="absolute left-4 right-12 top-1/2 -translate-y-1/2 border-t-4 border-dashed border-white" />
+              <div className="relative z-10 flex justify-between w-full pr-8">
+                {Array.from({ length: 10 }, (_, i) => (
+                  <div key={i} className="flex flex-col items-center gap-2">
+                    <div className="w-4 h-4 rounded-full bg-white border-4 border-white shadow-md" />
+                    <span className="text-white/70 text-xs font-medium">{i + 1}</span>
+                  </div>
+                ))}
+              </div>
+              <div className="absolute right-4 top-1/2 -translate-y-1/2 z-10 text-white">
+                <PlaneTakeoff className="w-7 h-7" strokeWidth={2.5} />
               </div>
             </div>
 
