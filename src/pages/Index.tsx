@@ -434,6 +434,20 @@ const Index = () => {
                     ))}
                   </ul>
                 </div>
+                <div>
+                  <h3 className="text-sm font-bold uppercase tracking-wider mb-6">ДРУГОЕ</h3>
+                  <ul className="space-y-3">
+                    <li>
+                      <a
+                        href="#faq"
+                        onClick={(e) => { e.preventDefault(); document.getElementById('faq')?.scrollIntoView({ behavior: 'smooth' }) }}
+                        className="text-white/70 hover:text-white transition-colors text-sm leading-relaxed"
+                      >
+                        FAQ
+                      </a>
+                    </li>
+                  </ul>
+                </div>
               </div>
             </div>
 
