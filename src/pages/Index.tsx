@@ -172,39 +172,23 @@ const Index = () => {
             {/* Section Header */}
             <div className="text-center mb-16">
               <h2 className="text-5xl md:text-6xl font-bold tracking-tight mb-6 text-balance">Программа путешествия</h2>
-              <p className="text-xl text-white/80 max-w-3xl mx-auto text-pretty">
-                От прилёта в Мале до закатных прогулок по океану — вот как пройдёт ваш тур.
-              </p>
             </div>
 
             {/* Journey Cards */}
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
-              {/* Phase 1: Briefing & Prep */}
+              {/* Phase 1 */}
               <div className="rounded-2xl bg-white/5 ring-1 ring-white/10 backdrop-blur p-8 h-80 flex flex-col">
                 <div className="flex-1">
-                  <div className="text-3xl font-bold text-white/60 mb-4">01.</div>
-                  <h3 className="text-xl font-semibold mb-4">Прилёт и заселение</h3>
+                  <h3 className="text-xl font-semibold mb-4">Прилет и заселение</h3>
                   <p className="text-white/80 leading-relaxed text-sm">
                     Встреча в аэропорту Мале, трансфер на катере или гидросамолёте и заселение в виллу у океана. Знакомство с группой и гидом.
                   </p>
                 </div>
               </div>
 
-              {/* Phase 2: The Trek */}
+              {/* Phase 2 */}
               <div className="rounded-2xl bg-white/5 ring-1 ring-white/10 backdrop-blur p-8 h-80 flex flex-col">
                 <div className="flex-1">
-                  <div className="text-3xl font-bold text-white/60 mb-4">02.</div>
-                  <h3 className="text-xl font-semibold mb-4">Дайвинг и рифы</h3>
-                  <p className="text-white/80 leading-relaxed text-sm">
-                    Погружения на лучших рифах с инструктором, снорклинг с черепахами и скатами. Для новичков — вводный курс на мелководье.
-                  </p>
-                </div>
-              </div>
-
-              {/* Phase 3: Caving */}
-              <div className="rounded-2xl bg-white/5 ring-1 ring-white/10 backdrop-blur p-8 h-80 flex flex-col">
-                <div className="flex-1">
-                  <div className="text-3xl font-bold text-white/60 mb-4">03.</div>
                   <h3 className="text-xl font-semibold mb-4">Культура островов</h3>
                   <p className="text-white/80 leading-relaxed text-sm">
                     Поездка на обитаемый местный остров: знакомство с традициями, дегустация мальдивской кухни и общение с жителями.
@@ -212,11 +196,20 @@ const Index = () => {
                 </div>
               </div>
 
-              {/* Phase 4: Base Camp */}
+              {/* Phase 3 */}
               <div className="rounded-2xl bg-white/5 ring-1 ring-white/10 backdrop-blur p-8 h-80 flex flex-col">
                 <div className="flex-1">
-                  <div className="text-3xl font-bold text-white/60 mb-4">04.</div>
-                  <h3 className="text-xl font-semibold mb-4">Закат и отдых</h3>
+                  <h3 className="text-xl font-semibold mb-4">Дайвинг и рифы</h3>
+                  <p className="text-white/80 leading-relaxed text-sm">
+                    Погружения на лучших рифах с инструктором, снорклинг с черепахами и скатами. Для новичков — вводный курс на мелководье.
+                  </p>
+                </div>
+              </div>
+
+              {/* Phase 4 */}
+              <div className="rounded-2xl bg-white/5 ring-1 ring-white/10 backdrop-blur p-8 h-80 flex flex-col">
+                <div className="flex-1">
+                  <h3 className="text-xl font-semibold mb-4">Отдых и закаты</h3>
                   <p className="text-white/80 leading-relaxed text-sm">
                     Морская прогулка на закате с наблюдением за дельфинами, спокойный отдых на белоснежных пляжах и тёплое прощание с океаном.
                   </p>
