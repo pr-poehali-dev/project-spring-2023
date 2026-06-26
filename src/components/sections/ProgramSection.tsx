@@ -1,5 +1,4 @@
 import { Sparkles, ShieldCheck, Wallet, Fish } from "lucide-react"
-import { Button } from "@/components/ui/button"
 
 const ProgramSection = () => {
   return (
@@ -159,14 +158,95 @@ const ProgramSection = () => {
               </svg>
             </div>
 
-            {/* Check Availability Button */}
-            <div className="text-center">
-              <Button
-                size="lg"
-                className="bg-white text-black hover:bg-white/90 rounded-full px-12 py-4 text-lg font-semibold"
+            {/* Maldives Map */}
+            <div className="mt-8 rounded-2xl bg-white/5 ring-1 ring-white/10 p-8">
+              <h3 className="text-center text-lg font-semibold mb-6 text-white/80">Расположение острова</h3>
+              <svg
+                viewBox="0 0 500 600"
+                xmlns="http://www.w3.org/2000/svg"
+                className="w-full max-w-md mx-auto block"
               >
-                Проверить наличие мест
-              </Button>
+                {/* Ocean background */}
+                <rect width="500" height="600" fill="#0a1628" rx="16" />
+
+                {/* Grid lines */}
+                {[100,200,300,400,500].map(x => (
+                  <line key={x} x1={x} y1="0" x2={x} y2="600" stroke="rgba(255,255,255,0.04)" strokeWidth="1" />
+                ))}
+                {[100,200,300,400,500].map(y => (
+                  <line key={y} x1="0" y1={y} x2="500" y2={y} stroke="rgba(255,255,255,0.04)" strokeWidth="1" />
+                ))}
+
+                {/* === АТОЛЛЫ МАЛЬДИВ (группы мелких островков) === */}
+
+                {/* North Thiladhunmathi atoll */}
+                {[[210,42],[225,38],[215,55],[235,48],[220,65],[205,58]].map(([x,y],i) => <ellipse key={i} cx={x} cy={y} rx="4" ry="2.5" fill="#2a7a4a" opacity="0.8" />)}
+
+                {/* South Thiladhunmathi */}
+                {[[215,88],[230,82],[220,98],[240,92]].map(([x,y],i) => <ellipse key={i} cx={x} cy={y} rx="3.5" ry="2" fill="#2a7a4a" opacity="0.8" />)}
+
+                {/* North Miladhunmadulu */}
+                {[[220,130],[235,124],[225,142],[245,136],[215,148]].map(([x,y],i) => <ellipse key={i} cx={x} cy={y} rx="4" ry="2.5" fill="#2a7a4a" opacity="0.8" />)}
+
+                {/* South Miladhunmadulu */}
+                {[[225,178],[240,172],[230,188],[250,182]].map(([x,y],i) => <ellipse key={i} cx={x} cy={y} rx="3.5" ry="2" fill="#2a7a4a" opacity="0.8" />)}
+
+                {/* North Maalhosmadulu (Raa) */}
+                {[[228,222],[244,216],[234,232],[252,226],[222,238]].map(([x,y],i) => <ellipse key={i} cx={x} cy={y} rx="4.5" ry="2.5" fill="#2a7a4a" opacity="0.8" />)}
+
+                {/* South Maalhosmadulu (Baa) — Ukulhas is here */}
+                {[[232,268],[248,262],[238,278],[256,272],[226,282]].map(([x,y],i) => <ellipse key={i} cx={x} cy={y} rx="4" ry="2.5" fill="#2a7a4a" opacity="0.8" />)}
+
+                {/* Faadhippolhu (Lhaviyani) */}
+                {[[236,312],[252,306],[242,322],[260,316]].map(([x,y],i) => <ellipse key={i} cx={x} cy={y} rx="4" ry="2.5" fill="#2a7a4a" opacity="0.8" />)}
+
+                {/* North Male atoll */}
+                {[[238,352],[254,346],[244,362],[262,356],[234,368],[252,374]].map(([x,y],i) => <ellipse key={i} cx={x} cy={y} rx="4.5" ry="2.5" fill="#2a7a4a" opacity="0.8" />)}
+
+                {/* South Male atoll */}
+                {[[240,408],[256,402],[246,418],[264,412],[238,424]].map(([x,y],i) => <ellipse key={i} cx={x} cy={y} rx="4" ry="2.5" fill="#2a7a4a" opacity="0.8" />)}
+
+                {/* Felidhu */}
+                {[[244,452],[260,446],[250,462]].map(([x,y],i) => <ellipse key={i} cx={x} cy={y} rx="3.5" ry="2" fill="#2a7a4a" opacity="0.8" />)}
+
+                {/* Mulaku */}
+                {[[246,492],[262,486],[252,502]].map(([x,y],i) => <ellipse key={i} cx={x} cy={y} rx="3.5" ry="2" fill="#2a7a4a" opacity="0.8" />)}
+
+                {/* North Nilandhe */}
+                {[[248,530],[264,524],[254,540]].map(([x,y],i) => <ellipse key={i} cx={x} cy={y} rx="3.5" ry="2" fill="#2a7a4a" opacity="0.8" />)}
+
+                {/* South Nilandhe + Kolhumadulu */}
+                {[[250,562],[266,556],[256,572]].map(([x,y],i) => <ellipse key={i} cx={x} cy={y} rx="3" ry="2" fill="#2a7a4a" opacity="0.8" />)}
+
+                {/* === МАЛЕ (столица) — атолл North Male === */}
+                <circle cx="248" cy="360" r="7" fill="#e8c84a" opacity="0.95" />
+                <circle cx="248" cy="360" r="4" fill="#f5e070" />
+                <text x="260" y="364" fill="#f5e070" fontSize="12" fontFamily="Inter, sans-serif" fontWeight="600">Мале</text>
+
+                {/* === УКУЛХАС — атолл Baa === */}
+                <circle cx="238" cy="272" r="8" fill="#ffffff" opacity="0.95" />
+                <circle cx="238" cy="272" r="5" fill="#60c0ff" />
+                <text x="250" y="269" fill="#ffffff" fontSize="13" fontFamily="Inter, sans-serif" fontWeight="700">Укулхас</text>
+
+                {/* === ПУНКТИРНАЯ ЛИНИЯ Мале → Укулхас === */}
+                <line
+                  x1="248" y1="353"
+                  x2="238" y2="279"
+                  stroke="rgba(255,255,255,0.55)"
+                  strokeWidth="1.5"
+                  strokeDasharray="5 4"
+                  strokeLinecap="round"
+                />
+
+                {/* Стрелка у Укулхаса */}
+                <polygon points="238,280 234,292 242,292" fill="rgba(255,255,255,0.55)" />
+
+                {/* Легенда */}
+                <circle cx="30" cy="560" r="5" fill="#e8c84a" />
+                <text x="40" y="564" fill="rgba(255,255,255,0.6)" fontSize="11" fontFamily="Inter, sans-serif">Столица Мале</text>
+                <circle cx="30" cy="580" r="5" fill="#60c0ff" />
+                <text x="40" y="584" fill="rgba(255,255,255,0.6)" fontSize="11" fontFamily="Inter, sans-serif">Остров Укулхас</text>
+              </svg>
             </div>
           </div>
         </div>
