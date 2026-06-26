@@ -36,6 +36,9 @@ const photos = [
   "https://cdn.poehali.dev/projects/735094ac-5d55-4396-a0f0-fe0e0cd97aa4/bucket/1b192955-2139-466b-afe8-d08736d48973.JPG",
   "https://cdn.poehali.dev/projects/735094ac-5d55-4396-a0f0-fe0e0cd97aa4/bucket/956a3509-103e-4b2c-bbe5-9aee71125d07.JPG",
   "https://cdn.poehali.dev/projects/735094ac-5d55-4396-a0f0-fe0e0cd97aa4/bucket/73a09c20-a6aa-46fb-bdd0-0617cfedb3dd.jpg",
+  "https://cdn.poehali.dev/projects/735094ac-5d55-4396-a0f0-fe0e0cd97aa4/bucket/4e2a9d03-0b90-47c7-9f28-af6c9bd9b959.jpg",
+  "https://cdn.poehali.dev/projects/735094ac-5d55-4396-a0f0-fe0e0cd97aa4/bucket/df4638ad-98f5-4eb0-9a90-6c5e0739e8e2.JPG",
+  "https://cdn.poehali.dev/projects/735094ac-5d55-4396-a0f0-fe0e0cd97aa4/bucket/23a4f0b6-0b52-4b16-be6d-acfe731b297f.JPG",
 ]
 
 const FaqSection = () => {
