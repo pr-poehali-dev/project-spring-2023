@@ -80,6 +80,7 @@ const FooterSection = () => {
           {/* Sub-footer */}
           <div className="border-t border-white/10 pt-8">
             <p className="text-white/60 text-sm text-center">© 2026 Maldives Voyage</p>
+            <p className="text-white/60 text-sm text-center mt-1">All rights reserved.</p>
           </div>
         </div>
       </div>
