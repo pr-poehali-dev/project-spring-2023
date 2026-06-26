@@ -218,7 +218,7 @@ const FaqSection = () => {
                 <div className="rounded-2xl bg-white/95 text-black p-6 shadow-2xl">
                   <div className="flex items-center gap-4 mb-4">
                     <img
-                      src="https://cdn.poehali.dev/projects/735094ac-5d55-4396-a0f0-fe0e0cd97aa4/bucket/4e2a9d03-0b90-47c7-9f28-af6c9bd9b959.jpg"
+                      src="https://cdn.poehali.dev/projects/735094ac-5d55-4396-a0f0-fe0e0cd97aa4/bucket/5272bde8-cf4d-4f22-8f7e-03eb40b83620.jpg"
                       alt="Наталия Дзагоева"
                       className="w-16 h-16 rounded-full object-cover"
                     />
