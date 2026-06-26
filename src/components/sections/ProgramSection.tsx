@@ -100,50 +100,63 @@ const ProgramSection = () => {
             </div>
 
             {/* Timeline */}
-            <div className="relative mb-4" style={{ height: '140px' }}>
+            <div className="relative mb-4" style={{ height: '160px' }}>
               <svg
                 className="absolute inset-0 w-full h-full"
-                viewBox="0 0 1000 140"
+                viewBox="0 0 1000 160"
                 preserveAspectRatio="none"
                 xmlns="http://www.w3.org/2000/svg"
               >
+                <defs>
+                  <marker id="arrowhead" markerWidth="6" markerHeight="6" refX="3" refY="3" orient="auto">
+                    <path d="M0,0 L0,6 L6,3 Z" fill="white" />
+                  </marker>
+                </defs>
+
+                {/* Волнистая пунктирная линия со стрелкой */}
                 <path
-                  d="M10,70 C35,45 65,45 90,70 C115,95 145,95 170,70 C195,45 225,45 250,70 C275,95 305,95 330,70 C355,45 385,45 410,70 C435,95 465,95 490,70 C515,45 545,45 570,70 C595,95 625,95 650,70 C675,45 705,45 730,70 C755,95 785,95 810,70 C835,45 865,45 890,70 C915,95 945,95 960,75"
+                  d="M10,80 C35,52 65,52 90,80 C115,108 145,108 170,80 C195,52 225,52 250,80 C275,108 305,108 330,80 C355,52 385,52 410,80 C435,108 465,108 490,80 C515,52 545,52 570,80 C595,108 625,108 650,80 C675,52 705,52 730,80 C755,108 785,108 810,80 C835,52 865,52 890,80 C915,108 945,108 975,80"
                   fill="none"
                   stroke="white"
-                  strokeWidth="2"
+                  strokeWidth="3"
                   strokeLinecap="round"
                   strokeLinejoin="round"
-                  strokeDasharray="8 6"
+                  strokeDasharray="10 7"
+                  markerEnd="url(#arrowhead)"
                 />
-                <text x="964" y="82" fill="white" fontSize="22" fontFamily="Georgia, 'Times New Roman', serif" fontStyle="italic" fontWeight="bold">→</text>
-              </svg>
 
-              {/* Кружочки в шахматном порядке */}
-              <div className="absolute inset-0 flex items-center justify-between px-2">
-                {Array.from({ length: 10 }, (_, i) => {
+                {/* Кружочки прямо на линии */}
+                {[
+                  { x: 10,  y: 80  },
+                  { x: 90,  y: 80  },
+                  { x: 170, y: 80  },
+                  { x: 250, y: 80  },
+                  { x: 330, y: 80  },
+                  { x: 410, y: 80  },
+                  { x: 490, y: 80  },
+                  { x: 570, y: 80  },
+                  { x: 650, y: 80  },
+                  { x: 730, y: 80  },
+                ].map((pt, i) => {
                   const isTop = i % 2 === 0
                   return (
-                    <div
-                      key={i}
-                      className="relative flex flex-col items-center"
-                      style={{ transform: isTop ? 'translateY(-28px)' : 'translateY(28px)' }}
-                    >
-                      {isTop && (
-                        <span className="text-white/70 text-xs mb-2 whitespace-nowrap" style={{ fontFamily: 'Georgia, serif', fontStyle: 'italic' }}>
-                          {i + 1} день
-                        </span>
-                      )}
-                      <div className="w-3 h-3 rounded-full border-2 border-white bg-transparent flex-shrink-0" />
-                      {!isTop && (
-                        <span className="text-white/70 text-xs mt-2 whitespace-nowrap" style={{ fontFamily: 'Georgia, serif', fontStyle: 'italic' }}>
-                          {i + 1} день
-                        </span>
-                      )}
-                    </div>
+                    <g key={i}>
+                      <circle cx={pt.x} cy={pt.y} r="7" fill="#0B0F12" stroke="white" strokeWidth="2.5" />
+                      <text
+                        x={pt.x}
+                        y={isTop ? pt.y - 18 : pt.y + 28}
+                        textAnchor="middle"
+                        fill="rgba(255,255,255,0.7)"
+                        fontSize="13"
+                        fontFamily="Georgia, 'Times New Roman', serif"
+                        fontStyle="italic"
+                      >
+                        {i + 1} день
+                      </text>
+                    </g>
                   )
                 })}
-              </div>
+              </svg>
             </div>
 
             {/* Check Availability Button */}
