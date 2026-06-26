@@ -114,7 +114,7 @@ const FaqSection = () => {
             "https://cdn.poehali.dev/projects/735094ac-5d55-4396-a0f0-fe0e0cd97aa4/bucket/956a3509-103e-4b2c-bbe5-9aee71125d07.JPG",
             "https://cdn.poehali.dev/projects/735094ac-5d55-4396-a0f0-fe0e0cd97aa4/bucket/73a09c20-a6aa-46fb-bdd0-0617cfedb3dd.jpg",
           ].map((src, i) => (
-            <div key={i} className="flex-shrink-0 mx-3 rounded-2xl overflow-hidden" style={{ width: '320px', height: '240px' }}>
+            <div key={i} className="flex-shrink-0 mx-3 rounded-2xl overflow-hidden" style={{ width: '420px', height: '320px' }}>
               <img
                 src={src}
                 alt={`Фото ${i + 1}`}
