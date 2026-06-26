@@ -74,12 +74,6 @@ const Index = () => {
 
           {/* Action Buttons */}
           <div className="flex items-center gap-3">
-            <a
-              href="#"
-              className="px-4 py-2 bg-black/40 ring-1 ring-white/20 backdrop-blur rounded-full hover:bg-black/50 transition-colors"
-            >
-              Войти
-            </a>
             <Button className="bg-white text-black hover:bg-white/90 rounded-full px-6">Забронировать</Button>
           </div>
         </nav>
