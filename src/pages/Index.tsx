@@ -1,4 +1,4 @@
-import { Waves, Anchor, Sparkles, ShieldCheck, Wallet, Fish, Plus, Minus, Mail, PlaneTakeoff } from "lucide-react"
+import { Waves, Anchor, Sparkles, ShieldCheck, Wallet, Fish, Plus, Minus, Mail } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { useState } from "react"
 
@@ -218,18 +218,56 @@ const Index = () => {
             </div>
 
             {/* Timeline */}
-            <div className="relative flex items-center px-4 py-8 mb-4">
-              <div className="absolute left-4 right-12 top-1/2 -translate-y-1/2 border-t-4 border-dashed border-white" />
-              <div className="relative z-10 flex justify-between w-full pr-8">
-                {Array.from({ length: 10 }, (_, i) => (
-                  <div key={i} className="flex flex-col items-center gap-2">
-                    <div className="w-4 h-4 rounded-full bg-white border-4 border-white shadow-md" />
-                    <span className="text-white/70 text-xs font-medium">{i + 1}</span>
-                  </div>
-                ))}
-              </div>
-              <div className="absolute right-4 top-1/2 -translate-y-1/2 z-10 text-white">
-                <PlaneTakeoff className="w-7 h-7" strokeWidth={2.5} />
+            <div className="relative mb-4" style={{ height: '120px' }}>
+              {/* Волнистая линия SVG */}
+              <svg
+                className="absolute inset-0 w-full h-full"
+                viewBox="0 0 1000 120"
+                preserveAspectRatio="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <defs>
+                  <filter id="roughen" x="-5%" y="-80%" width="115%" height="260%">
+                    <feTurbulence type="turbulence" baseFrequency="0.025" numOctaves="2" seed="5" result="noise" />
+                    <feDisplacementMap in="SourceGraphic" in2="noise" scale="2.5" xChannelSelector="R" yChannelSelector="G" />
+                  </filter>
+                </defs>
+                <path
+                  d="M10,60 C35,38 60,82 85,60 C110,38 135,82 160,60 C185,38 210,82 235,60 C260,38 285,82 310,60 C335,38 360,82 385,60 C410,38 435,82 460,60 C485,38 510,82 535,60 C560,38 585,82 610,60 C635,38 660,82 685,60 C710,38 735,82 760,60 C785,38 810,82 835,60 C860,38 885,82 910,60 C935,38 955,68 965,60"
+                  fill="none"
+                  stroke="white"
+                  strokeWidth="2.5"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  filter="url(#roughen)"
+                />
+                <text x="970" y="68" fill="white" fontSize="28" fontFamily="Georgia, 'Times New Roman', serif" fontStyle="italic">⟶</text>
+              </svg>
+
+              {/* Кружочки в шахматном порядке */}
+              <div className="absolute inset-0 flex items-center justify-between px-2">
+                {Array.from({ length: 10 }, (_, i) => {
+                  const isTop = i % 2 === 0
+                  return (
+                    <div
+                      key={i}
+                      className="relative flex flex-col items-center"
+                      style={{ transform: isTop ? 'translateY(-26px)' : 'translateY(26px)' }}
+                    >
+                      {isTop && (
+                        <span className="text-white/80 text-xs mb-2 whitespace-nowrap" style={{ fontFamily: 'Georgia, serif', fontStyle: 'italic' }}>
+                          {i + 1} день
+                        </span>
+                      )}
+                      <div className="w-4 h-4 rounded-full border-2 border-white bg-transparent flex-shrink-0" />
+                      {!isTop && (
+                        <span className="text-white/80 text-xs mt-2 whitespace-nowrap" style={{ fontFamily: 'Georgia, serif', fontStyle: 'italic' }}>
+                          {i + 1} день
+                        </span>
+                      )}
+                    </div>
+                  )
+                })}
               </div>
             </div>
 
