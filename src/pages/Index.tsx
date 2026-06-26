@@ -1,5 +1,6 @@
 import { Waves, Anchor, Sparkles, ShieldCheck, Wallet, Fish, Plus, Minus, Mail } from "lucide-react"
 import { Button } from "@/components/ui/button"
+import Icon from "@/components/ui/icon"
 import { useState } from "react"
 
 interface FAQ {
@@ -184,6 +185,9 @@ const Index = () => {
                     Встреча в аэропорту Мале, трансфер на катере или гидросамолёте и заселение в виллу у океана. Знакомство с группой и гидом.
                   </p>
                 </div>
+                <div className="mt-4">
+                  <Icon name="PlaneLanding" size={32} className="text-white" />
+                </div>
               </div>
 
               {/* Phase 2 */}
@@ -193,6 +197,9 @@ const Index = () => {
                   <p className="text-white/80 leading-relaxed text-sm">
                     Поездка на обитаемый местный остров: знакомство с традициями, дегустация мальдивской кухни и общение с жителями.
                   </p>
+                </div>
+                <div className="mt-4">
+                  <Icon name="TreePalm" size={32} className="text-white" fallback="Trees" />
                 </div>
               </div>
 
@@ -204,6 +211,9 @@ const Index = () => {
                     Погружения на лучших рифах с инструктором, снорклинг с черепахами и скатами. Для новичков — вводный курс на мелководье.
                   </p>
                 </div>
+                <div className="mt-4">
+                  <Icon name="Waves" size={32} className="text-white" />
+                </div>
               </div>
 
               {/* Phase 4 */}
@@ -213,6 +223,9 @@ const Index = () => {
                   <p className="text-white/80 leading-relaxed text-sm">
                     Морская прогулка на закате с наблюдением за дельфинами, спокойный отдых на белоснежных пляжах и тёплое прощание с океаном.
                   </p>
+                </div>
+                <div className="mt-4">
+                  <Icon name="Umbrella" size={32} className="text-white" />
                 </div>
               </div>
             </div>
